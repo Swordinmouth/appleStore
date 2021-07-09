@@ -13,9 +13,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+
+        let buyVC = BuyController()
+        let forMeVC = ForMeController()
+        let searchVC = SearchController()
+        let cartVC = CartController()
+
+        let navigationController = UINavigationController(rootViewController: searchVC)
+        let tabBarVC = UITabBarController()
+
+
+        buyVC.tabBarItem = UITabBarItem(title: "Купить", image: UIImage(systemName:"laptopcomputer.and.iphone"), tag: 0)
+        buyVC.view.backgroundColor = .black
+        buyVC.navigationController?.navigationBar.isHidden = true
+
+        forMeVC.tabBarItem = UITabBarItem(title: "Для вас", image: UIImage(systemName:"person.circle"), tag: 1)
+        forMeVC.view.backgroundColor = .black
+        forMeVC.navigationController?.navigationBar.isHidden = true
+
+        searchVC.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName:"magnifyingglass"), tag: 2)
+        searchVC.view.backgroundColor = .black
+        searchVC.navigationController?.navigationBar.isHidden = true
+
+        cartVC.tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(systemName:"bag"), tag: 3)
+        cartVC.view.backgroundColor = .black
+        cartVC.navigationController?.navigationBar.isHidden = true
+
+
+        tabBarVC.setViewControllers([buyVC, forMeVC, navigationController, cartVC], animated: true)
+        tabBarVC.tabBar.barTintColor = .black
+        self.window?.rootViewController = tabBarVC
+        self.window?.makeKeyAndVisible()
+        
+
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
