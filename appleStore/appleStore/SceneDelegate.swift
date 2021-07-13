@@ -25,11 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         buyVC.tabBarItem = UITabBarItem(title: "Купить", image: UIImage(systemName:"laptopcomputer.and.iphone"), tag: 0)
         buyVC.view.backgroundColor = .black
-        buyVC.navigationController?.navigationBar.isHidden = true
 
         forMeVC.tabBarItem = UITabBarItem(title: "Для вас", image: UIImage(systemName:"person.circle"), tag: 1)
         forMeVC.view.backgroundColor = .black
-        forMeVC.navigationController?.navigationBar.isHidden = true
 
         searchVC.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName:"magnifyingglass"), tag: 2)
         searchVC.view.backgroundColor = .black
@@ -37,14 +35,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         cartVC.tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(systemName:"bag"), tag: 3)
         cartVC.view.backgroundColor = .black
-        cartVC.navigationController?.navigationBar.isHidden = true
-
 
         tabBarVC.setViewControllers([buyVC, forMeVC, navigationController, cartVC], animated: true)
         tabBarVC.tabBar.barTintColor = .black
         self.window?.rootViewController = tabBarVC
         self.window?.makeKeyAndVisible()
-        
 
         guard let _ = (scene as? UIWindowScene) else { return }
     }

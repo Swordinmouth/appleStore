@@ -34,22 +34,41 @@ final class SearchController: UIViewController {
     private var macBookCaseView = UIView()
     private var strapView = UIView()
     private var brownCaseView = UIView()
+    private var iPhoneView = UIView()
 
     private var macBookCaseImage = UIImageView(image: UIImage(named: "чехол"))
+    private var secondMacBookCaseImage = UIImageView(image: UIImage(named: "чехол2"))
+    private var thirdMacBookCaseImage = UIImageView(image: UIImage(named: "чехол3"))
+
     private var strapImage = UIImageView(image: UIImage(named: "ремешок"))
+    private var secondStrapImage = UIImageView(image: UIImage(named: "ремешок2"))
+    private var thirdStrapImage = UIImageView(image: UIImage(named: "ремешок3"))
+
     private var brownCaseImage = UIImageView(image: UIImage(named: "коричневый чехол"))
+    private var secondBrownCaseImage = UIImageView(image: UIImage(named: "коричневый чехол2"))
+    private var thirdBrownCaseImage = UIImageView(image: UIImage(named: "коричневый чехол3"))
+
+    private var iPhoneImage = UIImageView(image: UIImage(named: "айфон"))
+    private var secondIPhoneImage = UIImageView(image: UIImage(named: "айфон2"))
+    private var thirdIPhoneImage = UIImageView(image: UIImage(named: "айфон3"))
+
 
     private var macBookLabel = UILabel()
     private var strapLabel = UILabel()
     private var brownCaseLabel = UILabel()
+    private var iPhoneLabel = UILabel()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpViews()
+
+    private var stuffScrollView = UIScrollView()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setupViews()
+        navigationController?.navigationBar.isHidden = true
     }
 
     //MARK: - Private Methods
-    private func setUpViews() {
+    private func setupViews() {
         createSearchLabel()
         createSearchTextField()
         createRecentlyViewedLabel()
@@ -76,6 +95,10 @@ final class SearchController: UIViewController {
         createBottomLineAppleCareView()
         createBottomLineBeatsView()
         createBottomLineIphoneView()
+        createIphoneView()
+        createIphoneImage()
+        createIphoneLable()
+        createStuffScrollView()
     }
 
     private func createSearchLabel() {
@@ -228,10 +251,17 @@ final class SearchController: UIViewController {
     }
 
     private func createBrownCaseView() {
-        brownCaseView.frame = CGRect(x: 280, y: 300, width: 200, height: 180)
+        brownCaseView.frame = CGRect(x: 280, y: 300, width: 130, height: 180)
         brownCaseView.backgroundColor = .darkGray
         brownCaseView.layer.cornerRadius = 20
         view.addSubview(brownCaseView)
+    }
+
+    private func createIphoneView() {
+        iPhoneView.frame = CGRect(x: 420, y: 300, width: 130, height: 180)
+        iPhoneView.backgroundColor = .darkGray
+        iPhoneView.layer.cornerRadius = 20
+        view.addSubview(iPhoneView)
     }
 
     private func createMacBookCaseImage() {
@@ -259,9 +289,19 @@ final class SearchController: UIViewController {
         brownCaseImage.isUserInteractionEnabled = true
         let thirdGesture = UITapGestureRecognizer(target: self, action: #selector(showChoseStuffView(sender:)))
         brownCaseImage.addGestureRecognizer(thirdGesture)
-        brownCaseImage.frame = CGRect(x: 15, y: 15, width: 130, height: 110)
+        brownCaseImage.frame = CGRect(x: 15, y: 15, width: 100, height: 100)
         brownCaseImage.contentMode = .scaleAspectFit
         brownCaseView.addSubview(brownCaseImage)
+    }
+
+    private func createIphoneImage() {
+        iPhoneImage.tag = 4
+        iPhoneImage.isUserInteractionEnabled = true
+        let fourthGesture = UITapGestureRecognizer(target: self, action: #selector(showChoseStuffView(sender:)))
+        iPhoneImage.addGestureRecognizer(fourthGesture)
+        iPhoneImage.frame = CGRect(x: 15, y: 15, width: 100, height: 100)
+        iPhoneImage.contentMode = .scaleAspectFit
+        iPhoneView.addSubview(iPhoneImage)
     }
 
     private func createMacBookLabel() {
@@ -294,23 +334,64 @@ final class SearchController: UIViewController {
         brownCaseView.addSubview(brownCaseLabel)
     }
 
+    private func createIphoneLable() {
+        iPhoneLabel.frame = CGRect(x: 15, y: 120, width: 120, height: 50)
+        iPhoneLabel.text = "iPhone 12 Pro"
+        iPhoneLabel.textColor = .white
+        iPhoneLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        iPhoneLabel.textAlignment = .left
+        iPhoneLabel.numberOfLines = 3
+        iPhoneView.addSubview(iPhoneLabel)
+    }
+
     @objc private func showChoseStuffView(sender: UITapGestureRecognizer) {
         let stuffVC = ChosenStuffController()
         guard let tag = sender.view?.tag else { return }
         switch tag {
         case 1:
             stuffVC.descriptionOfChosenStuff = macBookLabel.text ?? "nil"
-            stuffVC.imageOfChosenStuff = macBookCaseImage.image ?? UIImage()
+            stuffVC.priceLabel.text = "3 990.00 руб."
+            stuffVC.aboutLabel.text = macBookLabel.text
+            stuffVC.stuffImage = macBookCaseImage
+            stuffVC.secondStuffImage = secondMacBookCaseImage
+            stuffVC.thirdStuffImage = thirdMacBookCaseImage
         case 2:
             stuffVC.descriptionOfChosenStuff = strapLabel.text ?? "nil"
-            stuffVC.imageOfChosenStuff = strapImage.image ?? UIImage()
+            stuffVC.priceLabel.text = "3 990.00 руб."
+            stuffVC.aboutLabel.text = strapLabel.text
+            stuffVC.stuffImage = strapImage
+            stuffVC.secondStuffImage = secondStrapImage
+            stuffVC.thirdStuffImage = thirdStrapImage
         case 3:
             stuffVC.descriptionOfChosenStuff = brownCaseLabel.text ?? "nil"
-            stuffVC.imageOfChosenStuff = brownCaseImage.image ?? UIImage()
+            stuffVC.priceLabel.text = "7 990.00 руб."
+            stuffVC.aboutLabel.text = brownCaseLabel.text
+            stuffVC.stuffImage = brownCaseImage
+            stuffVC.secondStuffImage = secondBrownCaseImage
+            stuffVC.thirdStuffImage = thirdBrownCaseImage
+        case 4:
+            stuffVC.descriptionOfChosenStuff = iPhoneLabel.text ?? "nil"
+            stuffVC.priceLabel.text = "124.990 руб."
+            stuffVC.aboutLabel.text = iPhoneLabel.text
+            stuffVC.stuffImage = iPhoneImage
+            stuffVC.secondStuffImage = secondIPhoneImage
+            stuffVC.thirdStuffImage = thirdIPhoneImage
+
         default:
             break
         }
         navigationController?.pushViewController(stuffVC, animated: true)
+    }
+
+    private func createStuffScrollView() {
+        stuffScrollView.frame = CGRect(x: 0, y: 0, width: 410, height: 480)
+        stuffScrollView.contentSize = CGSize(width: stuffScrollView.frame.size.width * 1.5, height:
+                                                stuffScrollView.frame.size.height)
+        stuffScrollView.addSubview(macBookCaseView)
+        stuffScrollView.addSubview(strapView)
+        stuffScrollView.addSubview(brownCaseView)
+        stuffScrollView.addSubview(iPhoneView)
+        view.addSubview(stuffScrollView)
     }
 
 }
