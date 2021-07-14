@@ -17,6 +17,7 @@
 		1A24A76826988629009732DB /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A76726988629009732DB /* SearchController.swift */; };
 		1A24A76A26988647009732DB /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A76926988647009732DB /* CartController.swift */; };
 		1A78B7232698DB7600543DA1 /* ChosenStuffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B7222698DB7500543DA1 /* ChosenStuffController.swift */; };
+		1A78B765269EB45A00543DA1 /* WebSiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B764269EB45A00543DA1 /* WebSiteController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1A24A76726988629009732DB /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		1A24A76926988647009732DB /* CartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
 		1A78B7222698DB7500543DA1 /* ChosenStuffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenStuffController.swift; sourceTree = "<group>"; };
+		1A78B764269EB45A00543DA1 /* WebSiteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				1A24A76726988629009732DB /* SearchController.swift */,
 				1A24A76926988647009732DB /* CartController.swift */,
 				1A78B7222698DB7500543DA1 /* ChosenStuffController.swift */,
+				1A78B764269EB45A00543DA1 /* WebSiteController.swift */,
 				1A24A73726987A76009732DB /* Main.storyboard */,
 				1A24A73A26987A7A009732DB /* Assets.xcassets */,
 				1A24A73C26987A7A009732DB /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A24A73626987A76009732DB /* BuyController.swift in Sources */,
+				1A78B765269EB45A00543DA1 /* WebSiteController.swift in Sources */,
 				1A24A76A26988647009732DB /* CartController.swift in Sources */,
 				1A24A76826988629009732DB /* SearchController.swift in Sources */,
 				1A24A76626988615009732DB /* ForMeController.swift in Sources */,
