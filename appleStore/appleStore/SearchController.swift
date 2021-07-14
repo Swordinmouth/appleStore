@@ -39,6 +39,7 @@ final class SearchController: UIViewController {
     private var macBookCaseImageView = UIImageView(image: UIImage(named: "чехол"))
     private var secondMacBookCaseImageView = UIImageView(image: UIImage(named: "чехол2"))
     private var thirdMacBookCaseImageView = UIImageView(image: UIImage(named: "чехол3"))
+    private var macBookCases = ["чехол", "чехол2", "чехол3"]
 
     private var strapImageView = UIImageView(image: UIImage(named: "ремешок"))
     private var secondStrapImageView = UIImageView(image: UIImage(named: "ремешок2"))
@@ -59,6 +60,17 @@ final class SearchController: UIViewController {
 
 
     private var stuffScrollView = UIScrollView()
+
+    private var productDict: [Int: (firstProduct: String, secondProduct: String, thirdProduct: String, price: String)] = [:]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        productDict[0] = ("чехол", "чехол2", "чехол3", "3 990.20 rub")
+        productDict[1] = ("ремешок", "ремешок2", "ремешок3", "3 990.20 rub")
+        productDict[2] = ("коричневый чехол", "коричневый чехол2", "коричневый чехол3", "5 990.20 rub")
+        productDict[3] = ("айфон", "айфон2", "айфон3", "6 990.20 rub")
+    }
+
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -264,7 +276,7 @@ final class SearchController: UIViewController {
     }
 
     private func createMacBookCaseImage() {
-        macBookCaseImageView.tag = 1
+        macBookCaseImageView.tag = 0
         macBookCaseImageView.isUserInteractionEnabled = true
         let firstGesture = UITapGestureRecognizer(target: self, action: #selector(showChoseStuffView(sender:)))
         macBookCaseImageView.addGestureRecognizer(firstGesture)
@@ -274,7 +286,7 @@ final class SearchController: UIViewController {
     }
 
     private func createStrapImage() {
-        strapImageView.tag = 2
+        strapImageView.tag = 1
         strapImageView.isUserInteractionEnabled = true
         let secondGesture = UITapGestureRecognizer(target: self, action: #selector(showChoseStuffView(sender:)))
         strapImageView.addGestureRecognizer(secondGesture)
@@ -284,7 +296,7 @@ final class SearchController: UIViewController {
     }
 
     private func createBrownCaseImage() {
-        brownCaseImageView.tag = 3
+        brownCaseImageView.tag = 2
         brownCaseImageView.isUserInteractionEnabled = true
         let thirdGesture = UITapGestureRecognizer(target: self, action: #selector(showChoseStuffView(sender:)))
         brownCaseImageView.addGestureRecognizer(thirdGesture)
@@ -294,7 +306,7 @@ final class SearchController: UIViewController {
     }
 
     private func createIphoneImage() {
-        iPhoneImageView.tag = 4
+        iPhoneImageView.tag = 3
         iPhoneImageView.isUserInteractionEnabled = true
         let fourthGesture = UITapGestureRecognizer(target: self, action: #selector(showChoseStuffView(sender:)))
         iPhoneImageView.addGestureRecognizer(fourthGesture)
@@ -346,39 +358,14 @@ final class SearchController: UIViewController {
     @objc private func showChoseStuffView(sender: UITapGestureRecognizer) {
         let stuffVC = ChosenStuffController()
         guard let tag = sender.view?.tag else { return }
-        switch tag {
-        case 1:
-            stuffVC.descriptionOfChosenStuff = macBookLabel.text
-            stuffVC.priceString = "3 990.00 руб."
-            stuffVC.aboutString = macBookLabel.text
-            stuffVC.goodImage = macBookCaseImageView.image
-            stuffVC.secondGoodImage = secondMacBookCaseImageView.image
-            stuffVC.thirdGoodImage = thirdMacBookCaseImageView.image
-        case 2:
-            stuffVC.descriptionOfChosenStuff = strapLabel.text
-            stuffVC.priceString = "3 990.00 руб."
-            stuffVC.aboutString = strapLabel.text
-            stuffVC.goodImage = strapImageView.image
-            stuffVC.secondGoodImage = secondStrapImageView.image
-            stuffVC.thirdGoodImage = thirdStrapImageView.image
-        case 3:
-            stuffVC.descriptionOfChosenStuff = brownCaseLabel.text
-            stuffVC.priceString = "7 990.00 руб."
-            stuffVC.aboutString = brownCaseLabel.text
-            stuffVC.goodImage = brownCaseImageView.image
-            stuffVC.secondGoodImage = secondBrownCaseImageView.image
-            stuffVC.thirdGoodImage = thirdBrownCaseImageView.image
-        case 4:
-            stuffVC.descriptionOfChosenStuff = iPhoneLabel.text
-            stuffVC.priceString = "124.990 руб."
-            stuffVC.aboutString = iPhoneLabel.text
-            stuffVC.goodImage = iPhoneImageView.image
-            stuffVC.secondGoodImage = secondIPhoneImageView.image
-            stuffVC.thirdGoodImage = thirdIPhoneImageView.image
 
-        default:
-            break
-        }
+            stuffVC.descriptionOfChosenStuff = macBookLabel.text
+            stuffVC.priceString = productDict[tag]?.price ?? "nil"
+            stuffVC.aboutString = macBookLabel.text
+            stuffVC.goodImageName = productDict[tag]?.firstProduct ?? "nil"
+            stuffVC.secondGoodImageName = productDict[tag]?.secondProduct ?? "nil"
+            stuffVC.thirdGoodImageName = productDict[tag]?.thirdProduct ?? "nil"
+
         navigationController?.pushViewController(stuffVC, animated: true)
     }
 

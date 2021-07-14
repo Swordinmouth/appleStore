@@ -11,11 +11,11 @@ final class ChosenStuffController: UIViewController {
 
     // MARK: - Public Properties
     var descriptionOfChosenStuff: String?
-    var goodImage: UIImage?
-    var secondGoodImage: UIImage?
-    var thirdGoodImage: UIImage?
     var priceString: String?
     var aboutString: String?
+    var goodImageName = String()
+    var secondGoodImageName = String()
+    var thirdGoodImageName = String()
 
     //MARK: - Visual Components
     private var stuffLable = UILabel()
@@ -30,11 +30,13 @@ final class ChosenStuffController: UIViewController {
     private var shipmentDateLabel = UILabel()
     private var variantsOfShipmentLabel = UILabel()
     private var chosenStuffScrollView = UIScrollView()
-    private var stuffImage = UIImageView()
     private var secondStuffImage = UIImageView()
     private var thirdStuffImage = UIImageView()
     private var priceLabel = UILabel()
     private var aboutLabel = UILabel()
+    private var goodImage: UIImage?
+    private var secondGoodImage: UIImage?
+    private var thirdGoodImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,9 +71,6 @@ final class ChosenStuffController: UIViewController {
     }
 
     private func uploadInfo() {
-        stuffImage.image = goodImage
-        secondStuffImage.image = secondGoodImage
-        thirdStuffImage.image = thirdGoodImage
         priceLabel.text = priceString
         aboutLabel.text = aboutString
     }
@@ -117,19 +116,19 @@ final class ChosenStuffController: UIViewController {
 
         chosenStuffScrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:
                                                                             #selector(productImageTapped)))
-        let firstImage = stuffImage
+        let firstImage = UIImageView(image: UIImage(named: goodImageName))
         firstImage.frame = imageViewRect
         firstImage.contentMode = .scaleAspectFit
         chosenStuffScrollView.addSubview(firstImage)
 
         imageViewRect.origin.x += chosenStuffScrollView.frame.size.width
-        let secondImage = secondStuffImage
+        let secondImage = UIImageView(image: UIImage(named: secondGoodImageName))
         secondImage.frame = imageViewRect
         secondImage.contentMode = .scaleAspectFit
         chosenStuffScrollView.addSubview(secondImage)
 
         imageViewRect.origin.x += chosenStuffScrollView.frame.size.width
-        let thirdImage = thirdStuffImage
+        let thirdImage = UIImageView(image: UIImage(named: thirdGoodImageName))
         thirdImage.frame = imageViewRect
         thirdImage.contentMode = .scaleAspectFit
         chosenStuffScrollView.addSubview(thirdImage)
@@ -140,6 +139,7 @@ final class ChosenStuffController: UIViewController {
          vc.labelOfChosenStuff = stuffLable.text
          present(vc, animated: true)
      }
+
 
     private func createWhiteButton() {
         whiteColorButton.frame = CGRect(x: 150, y: 550, width: 40, height: 40)
