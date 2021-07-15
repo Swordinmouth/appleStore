@@ -32,13 +32,8 @@ final class ForMeController: UIViewController {
     private var showAllLabel = UILabel()
     private var avatarBarButton = UIButton()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
-        title = "Для вас"
-        tabBarController?.tabBar.barTintColor = .white
         setupView()
     }
     
@@ -65,6 +60,14 @@ final class ForMeController: UIViewController {
         createYourDevicesLabel()
         createShowAllLabel()
         createAvatarBarButton()
+        setupNavigationBar()
+    }
+
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+        title = "Для вас"
+        tabBarController?.tabBar.barTintColor = .white
     }
 
     private func createScreenScrollView() {
@@ -260,15 +263,15 @@ final class ForMeController: UIViewController {
 extension ForMeController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:
                                 [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")]
-            as? UIImage {
-            let imageResized = image.resizeImage(to: avatarBarButton.frame.size)
-            avatarBarButton.setImage(imageResized, for: .normal)
+        guard let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")]
+                as? UIImage else { return }
+        let imageResized = image.resizeImage(to: avatarBarButton.frame.size)
+        avatarBarButton.setImage(imageResized, for: .normal)
 
-            let imageData = image.pngData()
-            UserDefaults.standard.setValue(imageData, forKey: "Avatar")
-        }
-        picker.dismiss(animated: true, completion: nil)
+        let imageData = image.pngData()
+        UserDefaults.standard.setValue(imageData, forKey: "Avatar")
+
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -276,14 +279,5 @@ extension ForMeController: UIImagePickerControllerDelegate {
 extension ForMeController: UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
-    }
-}
-
-//MARK: - Extension UIImage
-extension UIImage {
-    func resizeImage(to size: CGSize) -> UIImage {
-        return UIGraphicsImageRenderer(size: size).image { _ in
-            draw(in: CGRect(origin: .zero, size: size))
-        }
     }
 }
