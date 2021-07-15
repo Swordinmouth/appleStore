@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let cartVC = CartController()
 
         let navigationController = UINavigationController(rootViewController: searchVC)
+        let forMeNavVC = UINavigationController(rootViewController: forMeVC)
         let tabBarVC = UITabBarController()
 
 
@@ -27,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         buyVC.view.backgroundColor = .black
 
         forMeVC.tabBarItem = UITabBarItem(title: "Для вас", image: UIImage(systemName:"person.circle"), tag: 1)
-        forMeVC.view.backgroundColor = .black
+        forMeVC.view.backgroundColor = .white
 
         searchVC.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName:"magnifyingglass"), tag: 2)
         searchVC.view.backgroundColor = .black
@@ -36,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         cartVC.tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(systemName:"bag"), tag: 3)
         cartVC.view.backgroundColor = .black
 
-        tabBarVC.setViewControllers([buyVC, forMeVC, navigationController, cartVC], animated: true)
+        tabBarVC.setViewControllers([buyVC, forMeNavVC, navigationController, cartVC], animated: true)
         tabBarVC.tabBar.barTintColor = .black
         self.window?.rootViewController = tabBarVC
         self.window?.makeKeyAndVisible()
