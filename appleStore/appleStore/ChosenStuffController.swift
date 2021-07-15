@@ -10,12 +10,12 @@ import UIKit
 final class ChosenStuffController: UIViewController {
 
     // MARK: - Public Properties
-    var descriptionOfChosenStuff = String()
-    var stuffImage = UIImageView()
-    var secondStuffImage = UIImageView()
-    var thirdStuffImage = UIImageView()
-    var priceLabel = UILabel()
-    var aboutLabel = UILabel()
+    var descriptionOfChosenStuff: String?
+    var priceString: String?
+    var aboutString: String?
+    var goodImageName = String()
+    var secondGoodImageName = String()
+    var thirdGoodImageName = String()
 
     //MARK: - Visual Components
     private var stuffLable = UILabel()
@@ -30,6 +30,13 @@ final class ChosenStuffController: UIViewController {
     private var shipmentDateLabel = UILabel()
     private var variantsOfShipmentLabel = UILabel()
     private var chosenStuffScrollView = UIScrollView()
+    private var secondStuffImage = UIImageView()
+    private var thirdStuffImage = UIImageView()
+    private var priceLabel = UILabel()
+    private var aboutLabel = UILabel()
+    private var goodImage: UIImage?
+    private var secondGoodImage: UIImage?
+    private var thirdGoodImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +67,14 @@ final class ChosenStuffController: UIViewController {
         createShipmentScheduleLabel()
         createShipmentDateLabel()
         createVariantsOfShipmentLabel()
+        uploadInfo()
     }
+
+    private func uploadInfo() {
+        priceLabel.text = priceString
+        aboutLabel.text = aboutString
+    }
+
 
     private func createStuffLable() {
         stuffLable.frame = CGRect(x: 10, y: 100, width: 400, height: 50)
@@ -94,28 +108,38 @@ final class ChosenStuffController: UIViewController {
     private func createChosenStuffScrollView() {
         chosenStuffScrollView.frame = CGRect(x: 0, y: 250, width: 410, height: 200)
         chosenStuffScrollView.isPagingEnabled = true
-        chosenStuffScrollView.contentSize = CGSize(width: chosenStuffScrollView.frame.size.width * 3, height: chosenStuffScrollView.frame.size.height)
+        chosenStuffScrollView.contentSize = CGSize(width: chosenStuffScrollView.frame.size.width * 3, height:
+                                                    chosenStuffScrollView.frame.size.height)
         view.addSubview(chosenStuffScrollView)
 
         var imageViewRect = chosenStuffScrollView.bounds
 
-        let firstImage = stuffImage
+        chosenStuffScrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:
+                                                                            #selector(productImageTapped)))
+        let firstImage = UIImageView(image: UIImage(named: goodImageName))
         firstImage.frame = imageViewRect
         firstImage.contentMode = .scaleAspectFit
         chosenStuffScrollView.addSubview(firstImage)
 
         imageViewRect.origin.x += chosenStuffScrollView.frame.size.width
-        let secondImage = secondStuffImage
+        let secondImage = UIImageView(image: UIImage(named: secondGoodImageName))
         secondImage.frame = imageViewRect
         secondImage.contentMode = .scaleAspectFit
         chosenStuffScrollView.addSubview(secondImage)
 
         imageViewRect.origin.x += chosenStuffScrollView.frame.size.width
-        let thirdImage = thirdStuffImage
+        let thirdImage = UIImageView(image: UIImage(named: thirdGoodImageName))
         thirdImage.frame = imageViewRect
         thirdImage.contentMode = .scaleAspectFit
         chosenStuffScrollView.addSubview(thirdImage)
     }
+
+    @objc private func productImageTapped() {
+         let vc = WebSiteController()
+         vc.labelOfChosenStuff = stuffLable.text
+         present(vc, animated: true)
+     }
+
 
     private func createWhiteButton() {
         whiteColorButton.frame = CGRect(x: 150, y: 550, width: 40, height: 40)
