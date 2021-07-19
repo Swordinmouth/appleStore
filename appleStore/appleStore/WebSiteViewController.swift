@@ -19,7 +19,7 @@ struct AppStoreSources {
     static let fourthStuffUrl = "https://www.apple.com/ru/shop/buy-iphone/iphone-12-pro"
 }
 
-class WebSiteController: UIViewController {
+class WebSiteViewController: UIViewController {
     //MARK: - Visual Components
     private var webView = WKWebView()
     private var webToolBar = UIToolbar()

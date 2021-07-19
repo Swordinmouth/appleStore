@@ -9,33 +9,39 @@
 /* Begin PBXBuildFile section */
 		1A24A73226987A76009732DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A73126987A76009732DB /* AppDelegate.swift */; };
 		1A24A73426987A76009732DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A73326987A76009732DB /* SceneDelegate.swift */; };
-		1A24A73626987A76009732DB /* BuyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A73526987A76009732DB /* BuyController.swift */; };
+		1A24A73626987A76009732DB /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A73526987A76009732DB /* BuyViewController.swift */; };
 		1A24A73926987A76009732DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A24A73726987A76009732DB /* Main.storyboard */; };
 		1A24A73B26987A7A009732DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A24A73A26987A7A009732DB /* Assets.xcassets */; };
 		1A24A73E26987A7A009732DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A24A73C26987A7A009732DB /* LaunchScreen.storyboard */; };
-		1A24A76626988615009732DB /* ForMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A76526988615009732DB /* ForMeController.swift */; };
-		1A24A76826988629009732DB /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A76726988629009732DB /* SearchController.swift */; };
-		1A24A76A26988647009732DB /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A76926988647009732DB /* CartController.swift */; };
-		1A78B7232698DB7600543DA1 /* ChosenStuffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B7222698DB7500543DA1 /* ChosenStuffController.swift */; };
-		1A78B765269EB45A00543DA1 /* WebSiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B764269EB45A00543DA1 /* WebSiteController.swift */; };
+		1A24A76626988615009732DB /* ForMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A76526988615009732DB /* ForMeViewController.swift */; };
+		1A24A76826988629009732DB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A76726988629009732DB /* SearchViewController.swift */; };
+		1A24A76A26988647009732DB /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24A76926988647009732DB /* CartViewController.swift */; };
+		1A78B7232698DB7600543DA1 /* ChosenStuffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B7222698DB7500543DA1 /* ChosenStuffViewController.swift */; };
+		1A78B765269EB45A00543DA1 /* WebSiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B764269EB45A00543DA1 /* WebSiteViewController.swift */; };
 		1A78B78B26A0B4EE00543DA1 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B78A26A0B4EB00543DA1 /* UIImage+Extension.swift */; };
+		1A78B7DA26A4735500543DA1 /* PregnancyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B7D926A4735500543DA1 /* PregnancyViewController.swift */; };
+		1A78B7DD26A473BB00543DA1 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B7DC26A473BB00543DA1 /* CycleViewController.swift */; };
+		1A78B7DF26A4742B00543DA1 /* PregnancyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A78B7DE26A4742B00543DA1 /* PregnancyHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A24A72E26987A76009732DB /* appleStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appleStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A24A73126987A76009732DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A24A73326987A76009732DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1A24A73526987A76009732DB /* BuyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyController.swift; sourceTree = "<group>"; };
+		1A24A73526987A76009732DB /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		1A24A73826987A76009732DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A24A73A26987A7A009732DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A24A73D26987A7A009732DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A24A73F26987A7A009732DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A24A76526988615009732DB /* ForMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMeController.swift; sourceTree = "<group>"; };
-		1A24A76726988629009732DB /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
-		1A24A76926988647009732DB /* CartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
-		1A78B7222698DB7500543DA1 /* ChosenStuffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenStuffController.swift; sourceTree = "<group>"; };
-		1A78B764269EB45A00543DA1 /* WebSiteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteController.swift; sourceTree = "<group>"; };
+		1A24A76526988615009732DB /* ForMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMeViewController.swift; sourceTree = "<group>"; };
+		1A24A76726988629009732DB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		1A24A76926988647009732DB /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		1A78B7222698DB7500543DA1 /* ChosenStuffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenStuffViewController.swift; sourceTree = "<group>"; };
+		1A78B764269EB45A00543DA1 /* WebSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteViewController.swift; sourceTree = "<group>"; };
 		1A78B78A26A0B4EB00543DA1 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		1A78B7D926A4735500543DA1 /* PregnancyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PregnancyViewController.swift; sourceTree = "<group>"; };
+		1A78B7DC26A473BB00543DA1 /* CycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
+		1A78B7DE26A4742B00543DA1 /* PregnancyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PregnancyHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,19 +76,30 @@
 			children = (
 				1A24A73126987A76009732DB /* AppDelegate.swift */,
 				1A24A73326987A76009732DB /* SceneDelegate.swift */,
-				1A24A73526987A76009732DB /* BuyController.swift */,
-				1A24A76526988615009732DB /* ForMeController.swift */,
+				1A24A73526987A76009732DB /* BuyViewController.swift */,
+				1A24A76526988615009732DB /* ForMeViewController.swift */,
 				1A78B78A26A0B4EB00543DA1 /* UIImage+Extension.swift */,
-				1A24A76726988629009732DB /* SearchController.swift */,
-				1A24A76926988647009732DB /* CartController.swift */,
-				1A78B7222698DB7500543DA1 /* ChosenStuffController.swift */,
-				1A78B764269EB45A00543DA1 /* WebSiteController.swift */,
+				1A24A76726988629009732DB /* SearchViewController.swift */,
+				1A24A76926988647009732DB /* CartViewController.swift */,
+				1A78B7222698DB7500543DA1 /* ChosenStuffViewController.swift */,
+				1A78B764269EB45A00543DA1 /* WebSiteViewController.swift */,
+				1A78B7DB26A4735A00543DA1 /* PageVC */,
 				1A24A73726987A76009732DB /* Main.storyboard */,
 				1A24A73A26987A7A009732DB /* Assets.xcassets */,
 				1A24A73C26987A7A009732DB /* LaunchScreen.storyboard */,
 				1A24A73F26987A7A009732DB /* Info.plist */,
 			);
 			path = appleStore;
+			sourceTree = "<group>";
+		};
+		1A78B7DB26A4735A00543DA1 /* PageVC */ = {
+			isa = PBXGroup;
+			children = (
+				1A78B7D926A4735500543DA1 /* PregnancyViewController.swift */,
+				1A78B7DC26A473BB00543DA1 /* CycleViewController.swift */,
+				1A78B7DE26A4742B00543DA1 /* PregnancyHelper.swift */,
+			);
+			path = PageVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,15 +172,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A24A73626987A76009732DB /* BuyController.swift in Sources */,
-				1A78B765269EB45A00543DA1 /* WebSiteController.swift in Sources */,
-				1A24A76A26988647009732DB /* CartController.swift in Sources */,
-				1A24A76826988629009732DB /* SearchController.swift in Sources */,
+				1A24A73626987A76009732DB /* BuyViewController.swift in Sources */,
+				1A78B765269EB45A00543DA1 /* WebSiteViewController.swift in Sources */,
+				1A24A76A26988647009732DB /* CartViewController.swift in Sources */,
+				1A24A76826988629009732DB /* SearchViewController.swift in Sources */,
 				1A78B78B26A0B4EE00543DA1 /* UIImage+Extension.swift in Sources */,
-				1A24A76626988615009732DB /* ForMeController.swift in Sources */,
-				1A78B7232698DB7600543DA1 /* ChosenStuffController.swift in Sources */,
+				1A24A76626988615009732DB /* ForMeViewController.swift in Sources */,
+				1A78B7232698DB7600543DA1 /* ChosenStuffViewController.swift in Sources */,
 				1A24A73226987A76009732DB /* AppDelegate.swift in Sources */,
+				1A78B7DA26A4735500543DA1 /* PregnancyViewController.swift in Sources */,
+				1A78B7DD26A473BB00543DA1 /* CycleViewController.swift in Sources */,
 				1A24A73426987A76009732DB /* SceneDelegate.swift in Sources */,
+				1A78B7DF26A4742B00543DA1 /* PregnancyHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

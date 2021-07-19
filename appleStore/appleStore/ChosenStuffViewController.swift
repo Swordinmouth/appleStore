@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ChosenStuffController: UIViewController {
+final class ChosenStuffViewController: UIViewController {
 
     // MARK: - Public Properties
     var descriptionOfChosenStuff: String?
@@ -135,7 +135,7 @@ final class ChosenStuffController: UIViewController {
     }
 
     @objc private func productImageTapped() {
-         let vc = WebSiteController()
+         let vc = WebSiteViewController()
          vc.labelOfChosenStuff = stuffLable.text
          present(vc, animated: true)
      }

@@ -1,5 +1,5 @@
 //
-//  ForMeController.swift
+//  ForMeViewController.swift
 //  appleStore
 //
 //  Created by Valery on 09.07.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ForMeController: UIViewController {
+final class ForMeViewController: UIViewController {
 
     //MARK: - Visual Componetnts
     private var screenScrollView = UIScrollView()
@@ -260,7 +260,7 @@ final class ForMeController: UIViewController {
 }
 
 //MARK: - Extension UIImagePickerControllerDelegate
-extension ForMeController: UIImagePickerControllerDelegate {
+extension ForMeViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:
                                 [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")]
@@ -276,7 +276,7 @@ extension ForMeController: UIImagePickerControllerDelegate {
 }
 
 //MARK: - Extension UINavigationControllerDelegate
-extension ForMeController: UINavigationControllerDelegate {
+extension ForMeViewController: UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
