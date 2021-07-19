@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchController: UIViewController {
+final class SearchViewController: UIViewController {
 
     //MARK: - Visual Componetnts
     private var searchLabel = UILabel()
@@ -356,7 +356,7 @@ final class SearchController: UIViewController {
     }
 
     @objc private func showChoseStuffView(sender: UITapGestureRecognizer) {
-        let stuffVC = ChosenStuffController()
+        let stuffVC = ChosenStuffViewController()
         guard let tag = sender.view?.tag else { return }
 
             stuffVC.descriptionOfChosenStuff = macBookLabel.text
